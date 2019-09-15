@@ -1,0 +1,14 @@
+class Solution (object):
+    def findDisappearNumber(self, nums):
+        for i in range(len(nums)):
+            index = abs(nums[i]) -1
+            nums[index] = 0 - nums[index]
+        return[i+1 for i in range(len(nums)) if nums[i] > 0]
+
+def main():
+    nums = [4, 3, 2, 7, 8, 2, 3, 1]
+    s = Solution()
+    print s.findDisappearNumber(nums)
+
+if __name__ == "__main__":
+    main()
