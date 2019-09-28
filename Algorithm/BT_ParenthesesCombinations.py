@@ -11,7 +11,7 @@ class Solution(object):
                 result.pop()
                 result.append(')')
                 self.findCombinations(result, left, right-1, sum-1)
-                result.pop()
+                # result.pop()
 
 
 def main():
