@@ -1,3 +1,7 @@
+##
+# given an array and a number,
+# find all the combination of two indices such that the sum of their element value equals to this given number
+
 class Solution(object):
 
     def findSubArray(self, array, sum):
@@ -24,20 +28,11 @@ class Solution(object):
                 return
 
 
-
-
-
-
-
-
-
-
 def main():
     s = Solution()
-    array = [3, 5, 7, 12, 11, 8, 9, 7,  1, 2, 3, 4, 5, 6, 7, 8, 9, 3]
+    array = [3, 5, 7, 12, 11, 8, 9, 7,  1, 2, 3, 4, 5, 6, 7, 8, 9, 3, 12]
     sum = 12
     s.findSubArray(array, sum)
-
 
 
 if __name__ == "__main__":
