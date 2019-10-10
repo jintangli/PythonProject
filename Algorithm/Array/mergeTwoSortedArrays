@@ -1,0 +1,62 @@
+# Given two sorted arrays arr1[] and arr2[] in non-decreasing order with size n and m.
+# The task is to merge the two sorted arrays into one sorted array (in non-decreasing order).
+
+
+class Solution(object):
+    def merge(self, array_1, array_2):
+        index = len(array_2) -1
+        last = len(array_1) - 1
+        while index >= 0:
+            if array_2[index] < array_1[last]:
+                temp = array_2[index]
+                array_2[index] = array_1[last]
+                array_1[last] = temp
+                self.sort(array_1)
+            index -= 1
+
+    def sort(self, array_1):
+        index = len(array_1) -1
+        while(index > 0):
+            if array_1[index] >= array_1[index - 1]:
+                return
+            temp = array_1[index]
+            array_1[index] = array_1[index-1]
+            array_1[index-1]=temp
+            index -= 1
+
+
+def main():
+    solution = Solution();
+    arr1 = [10]
+    arr2 = [2, 3]
+    print "before: "
+    print arr1
+    print arr2
+    solution.merge(arr1, arr2)
+    print "after: "
+    print arr1
+    print arr2
+    print "*******************************************"
+    arr1 = [1, 5, 9, 10, 15, 20]
+    arr2 = [2, 3, 8, 13]
+    print "before: "
+    print arr1
+    print arr2
+    solution.merge(arr1, arr2)
+    print "after: "
+    print arr1
+    print arr2
+    print "*******************************************"
+    arr1 = [1]
+    arr2 = [2]
+    print "before: "
+    print arr1
+    print arr2
+    solution.merge(arr1, arr2)
+    print "after: "
+    print arr1
+    print arr2
+
+if __name__ == "__main__":
+    main()
+
